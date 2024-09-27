@@ -1,4 +1,5 @@
 import SocialNetworks from "./SocialNetworks"
+import InformationContainer from "./InformationContainer"
 
 import Avatar from "../img/perfil-portfolio.webp"
 
@@ -10,7 +11,7 @@ const Sidebar = () => {
       <img src={Avatar} alt="Imagem do José Luiz" />
       <p className="title">Desenvolvedor</p>
       <SocialNetworks/>
-      <p>informações de Contato</p>
+      <InformationContainer />
       <a href="" className="btn">
         Download curriculo
       </a>
