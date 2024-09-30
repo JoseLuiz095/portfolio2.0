@@ -1,32 +1,127 @@
 @use "../variables"
 @use "../mixins"
 
-#sidebar
-    background-color: variables.$bg-color
-    flex: 1 1 0
+#sidebar 
+  background-color: variables.$bg-color
+  flex: 1 1 0
+  border-radius: variables.$container-border-radius
+  display: flex
+  align-items: center
+  flex-direction: column
+  text-align: center
+  position: fixed
+  width: 25%
+  padding: .8rem 0
+  transition: transform 0.3s ease
+  z-index: 1000
+
+    
+  // Inicialmente fora da tela em telas pequenas
+  @media (max-width: 1100px) 
+    transform: translateX(-200%)
+    width: 100%
+    &.open 
+      transform: translateX(0)
+    
+  
+
+  img 
+    max-width: 50%
     border-radius: variables.$container-border-radius
+    position: absolute
+    top: -3rem
+  
+
+  .title 
+    color: variables.$text-color-sencondary
+    background-color: variables.$bg-color-secondary
+    border-radius: variables.$card-border-radius
+    margin-top: 30%
+    padding: .8rem 1.2rem
+  
+
+  .btn 
+    @include mixins.btn
+  
+
+
+// Ícone de hambúrguer
+.hamburger 
+  position: fixed
+  top: 5px
+  left: 20px
+  font-size: 2rem
+  background: none
+  border: none
+  cursor: pointer
+  z-index: 1100
+
+  &.open 
+    left: 20px // ajusta a posição quando o sidebar está aberto
+  
+
+  @media (min-width: 1101px) 
+    display: none // Esconde o botão em telas maiores
+  
+
+
+#main-contect 
+  background-color: variables.$bg-color
+  flex: 2 1 0
+  border-radius: variables.$container-border-radius
+  padding: 3rem
+  margin-left: 30%
+  width: 75%
+  transition: width 0.3s ease, margin-left 0.3s ease
+
+  @media (max-width: 1100px) 
+    
+    margin-left: 0
+
+    // Quando o sidebar estiver aberto, ajusta o main-content
+    &.open 
+      width: calc(100% - 250px)
+      margin-left: 250px
+    
+  
+
+  h1 
+    font-size: 5rem
+    position: absolute
+    left: 50%
+    background: variables.$gradient
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    text-shadow: 0px 0px 20px rgba(105, 105, 105, 0.3)
+  
+
+  section 
+    padding-top: 15%
     display: flex
-    align-items: center
     flex-direction: column
-    text-align: center
-    position: fixed
-    width: 25%
-    padding: .8rem 0
+  
 
+  h2 
+    color: variables.$text-color
+    font-size: 2.2rem
+    margin-bottom: 1.3rem
+    @include mixins.center
+    justify-content: start
+    gap: 1rem
 
-    img
-        max-width: 50%
-        border-radius: variables.$container-border-radius
-        position: absolute
-        top: -3rem
+    &:after 
+      @include mixins.gradient-border
+    
+  
 
-    .title
-        color: variables.$text-color-sencondary
-        background-color: variables.$bg-color-secondary
-        border-radius: variables.$card-border-radius
-        margin-top: 30%
-        padding: .8rem 1.2rem
+  p 
+    color: variables.$text-color-sencondary
+    margin-bottom: 1rem
+    line-height: 1.4rem
+  
 
-    .btn
-        @include mixins.btn
-        
+  .btn 
+    @include mixins.btn
+    align-self: start
+  
+
