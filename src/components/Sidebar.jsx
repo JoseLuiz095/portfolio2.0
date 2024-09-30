@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
     <>
       <button className={`hamburger ${isOpen ? "open" : ""}`} onClick={toggleSidebar}>
-        &#9776;
+        {isOpen ? "✖" : "☰"} {/* Troca entre o ícone de hambúrguer e o X */}
       </button>
       <aside id="sidebar" className={`${isOpen ? "open" : ""}`}>
         <img src={Avatar} alt="Imagem do José Luiz" />

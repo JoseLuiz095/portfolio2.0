@@ -7,7 +7,9 @@ import "../styles/components/maincontent.sass"
 const MainContent = () => {
   return (
     <main id="main-contect">
-      <h1>José Luiz</h1>
+      <div className="title-name">
+        <h1>José Luiz</h1>
+      </div>
       <AboutContainer />
       <TecnologiesContainer />
       <ProjectsContainer />

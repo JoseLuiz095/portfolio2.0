@@ -18,8 +18,9 @@
     
   // Inicialmente fora da tela em telas pequenas
   @media (max-width: 1100px) 
-    transform: translateX(-200%)
-    width: 100%
+    transform: translateX(-150%)
+    width: 85%
+    height: 90%
     &.open 
       transform: translateX(0)
     
@@ -29,14 +30,14 @@
     max-width: 50%
     border-radius: variables.$container-border-radius
     position: absolute
-    top: -3rem
+    top: 5rem
   
 
   .title 
     color: variables.$text-color-sencondary
     background-color: variables.$bg-color-secondary
     border-radius: variables.$card-border-radius
-    margin-top: 30%
+    margin-top: 60%
     padding: .8rem 1.2rem
   
 
@@ -49,16 +50,14 @@
 .hamburger 
   position: fixed
   top: 5px
-  left: 20px
-  font-size: 2rem
+  right: 20px
+  font-size: 3rem
   background: none
+  color: #fff
   border: none
   cursor: pointer
   z-index: 1100
 
-  &.open 
-    left: 20px // ajusta a posição quando o sidebar está aberto
-  
 
   @media (min-width: 1101px) 
     display: none // Esconde o botão em telas maiores
@@ -67,7 +66,7 @@
 
 #main-contect 
   background-color: variables.$bg-color
-  flex: 2 1 0
+  flex: 1 1 0
   border-radius: variables.$container-border-radius
   padding: 3rem
   margin-left: 30%
@@ -86,8 +85,7 @@
   
 
   h1 
-    font-size: 5rem
-    position: absolute
+    font-size: 300%
     left: 50%
     background: variables.$gradient
     -webkit-background-clip: text
@@ -117,7 +115,8 @@
   p 
     color: variables.$text-color-sencondary
     margin-bottom: 1rem
-    line-height: 1.4rem
+    line-height: 1.2rem
+    font-size: 13px
   
 
   .btn 

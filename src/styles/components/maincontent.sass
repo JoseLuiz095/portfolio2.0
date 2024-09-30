@@ -10,10 +10,13 @@
     margin-left:30% 
     width: 75%
     
+    .title-name
+        display: flex
+        justify-content: center
+        align-items: center
+
     h1
         font-size: 5rem
-        position: absolute
-        left: 50%
         background: variables.$gradient
         -webkit-background-clip: text
         -webkit-text-fill-color: transparent 
@@ -45,4 +48,4 @@
     .btn 
          @include mixins.btn
          align-self: start 
-        
+
