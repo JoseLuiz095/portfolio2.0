@@ -3,7 +3,7 @@ const AboutContainer = () => {
         <section className="about-container">
             <h2>Sobre</h2>
             <p>
-            José Luiz, natural do Espírito Santo, iniciou sua jornada na programação em 2019 e acumula mais de cinco anos de experiência autodidata em tecnologias como Python, React, PHP, MySQL, entre outras. Com formação em instituições como Harvard e Udemy, atua como freelancer em projetos desafiadores. Além disso, trabalha como Técnico de Informática na Upa Infantil, e concluiu a pós-graduação em Engenharia de Software e Desenvolvimento Front-end. Atualmente, cursa Tecnologia em Sistemas para Internet no Ifes, buscando sempre aprimorar suas habilidades.
+            Sou apaixonado por programação e desenvolvimento de soluções tecnológicas que impactam positivamente a vida das pessoas. Com experiência em Python, React, PHP, MySQL, e Java, atuo como Freelancer e Técnico de Informática. Atualmente, curso Tecnologia em Sistemas para Internet pelo Ifes e busco sempre novos desafios para evoluir minhas habilidades. Já sou formado em pós-graduação em Engenharia de Software e Desenvolvimento Front-end, além de ter concluído diversos cursos em instituições renomadas.
             </p>
         </section>
     )
