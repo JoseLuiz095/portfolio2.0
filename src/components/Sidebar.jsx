@@ -17,10 +17,10 @@ const Sidebar = () => {
         {isOpen ? "✖" : "☰"} {/* Troca entre o ícone de hambúrguer e o X */}
       </button>
       <aside id="sidebar" className={`${isOpen ? "open" : ""}`}>
-        <img src={Avatar} alt="Imagem do José Luiz" />
-        <p className="title">Desenvolvedor</p>
-        <SocialNetworks />
-        <InformationContainer />
+        <img className="conteudo" src={Avatar} alt="Imagem do José Luiz" />
+        <p className="title conteudo">Desenvolvedor</p>
+        <SocialNetworks className="conteudo" />
+        <InformationContainer className="conteudo" />
         <a href="" className="btn">
           Download curriculo
         </a>
