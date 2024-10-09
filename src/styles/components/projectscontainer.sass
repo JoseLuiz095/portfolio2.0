@@ -1,89 +1,24 @@
-@use "../variables"
-@use "../mixins"
-// @import padão 
-
-.slick-slider 
-  position: relative
-  display: block
-  box-sizing: border-box
-  user-select: none
-  touch-action: pan-y
-  -webkit-tap-highlight-color: transparent
-
-
-.slick-list 
-  position: relative
-  overflow: hidden
-  margin: 0
-  padding: 0
-
-
-.slick-track 
-  position: relative
-  display: flex
-  top: 0
-  left: 0
-
-
-.slick-slide 
-  float: left
-  height: auto
-  min-height: 1px
-  width: 75% !important // Define o tamanho do card com porcentagem
-  padding: 1%
-  transition: all 0.3s ease // Para suavizar a animação de transição
-
-
-.slick-prev, .slick-next 
-  position: absolute
-  top: 50%
-  display: block
-  padding: 0
-  transform: translate(0, -50%)
-  cursor: pointer
-  color: #000
-  font-size: 24px
-  line-height: 0
-
-
-.slick-prev  
-  left: -25px 
-.slick-next  
-  right: -25px 
-
-.slick-dots 
-  position: absolute
-  bottom: -25px
-  display: block
-  width: 100%
-  padding: 0
-  margin: 0
-  list-style: none
-  text-align: center
-
-
+@import "slick-carousel/slick/slick.css"
+@import "slick-carousel/slick/slick-theme.css"
 
 // Estilização para o carrossel de projetos
 .img-cards
-  width: 80%
+  width: 100%
   height: auto
-  border-radius: variables.$card-border-radius
+  border-radius: 10px
 
 .slick-slide
-  padding: 1%
-
-
+  padding: 10px
 
 .card
-  width: 75% !important
-  max-width: 300px
+  min-height:200px 
   text-align: center
   background-color: #fff
-  border-radius: variables.$card-border-radius
+  border-radius: 10px
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
 
   .box
-    padding: 5%
+    padding: 20px
 
   .text
     font-weight: bold
@@ -96,9 +31,6 @@
 
 // Estilização para o container de projetos
 .project-container
-  width: 95%
-  margin: 0 auto
-
   h2
     font-size: 2.5rem
     margin-bottom: 20px
