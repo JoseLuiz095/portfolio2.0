@@ -1,44 +1,80 @@
+@use "../variables"
+@use "../mixins"
+
 @import "slick-carousel/slick/slick.css"
 @import "slick-carousel/slick/slick-theme.css"
 
 // Estilização para o carrossel de projetos
 .img-cards
-  width: 100%
-  height: auto
-  border-radius: 10px
+    max-width: 6rem
+    height: 6rem
+    border-radius: 50%
+    margin: 0 25%
+    border: 2px solid variables.$bg-color-secondary
+    transition: .4s
+
+    &:hover
+        scale: 1.2
+        border:2px solid #007bff 
 
 .slick-slide
   padding: 10px
 
+.slick-dots li button:before 
+    opacity: .5
+    color: white
+.slick-dots li.slick-active button:before
+    color:#FF4500 
 .card
-  min-height:200px 
+  min-height: 300px 
   text-align: center
-  background-color: #fff
+  background-color: #e2e2e2
   border-radius: 10px
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
-
-  .box
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1)
+  position: relative // Certifique-se de que o card tenha position relative
+.box
     padding: 20px
+    display: flex
+    flex-direction: column
+    justify-content: space-between // Para separar o conteúdo dos ícones
+    .portfolio-img
+        display: flex
+        align-content: center
+    .text
+        font-weight: bold
+        margin-top: 10px
+        font-size: 1.2rem
+    .links
+        position: absolute
+        bottom: 20px // Define a posição dos ícones no final do card
+        left: 50%
+        transform: translateX(-50%) // Centraliza horizontalmente
+        display: flex
+        gap: 10px 
+    
+    .icon
+        color: #000
+        transition: color 0.8s
 
-  .text
-    font-weight: bold
-    margin-top: 10px
-    font-size: 1.2rem
+        :hover
+            color: #007bff 
 
-  p
-    font-size: 1rem
-    color: #555
 
-// Estilização para o container de projetos
-.project-container
-  h2
-    font-size: 2.5rem
-    margin-bottom: 20px
-    text-align: center
 
-  .slick-dots
-    bottom: -25px
+    p
+        font-size: 1rem
+        color: #555
 
-  .slick-prev, .slick-next
-    &:before
-      color: #000
+// Corrigindo os estilos para o slick-dots fora de qualquer outro seletor
+    .slick-dots 
+        li 
+            button:before 
+            color: #ff6347 // Cor dos pontos normais
+            font-size: 10px // Certifique-se de definir o tamanho correto do ponto, se necessário
+            
+
+            &.slick-active button:before 
+            color: #00bfff // Cor do ponto ativo
+            
+  
+

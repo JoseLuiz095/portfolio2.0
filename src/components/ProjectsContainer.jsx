@@ -27,7 +27,7 @@ const ProjectsContainer = () => {
     adaptiveHeight: true,
     pauseOnHover: true,
     swipeToSlide: true,
-    lazyLoad: 'ondemand',
+    lazyLoad: 'progressive',
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
@@ -75,32 +75,32 @@ const ProjectsContainer = () => {
       link: 'https://github.com/JoseLuiz095/bot_indicador',
     },
     {
-      title: 'Calculadora de IMC',
-      description: 'Calculadora de IMC Web',
-      image: 'image/academia.png',
-      github: 'https://github.com/JoseLuiz095/ProjetoIMC',
-      link: 'https://joseluiz095.github.io/projetejo-imc/',
+      title: 'Biblioteca de Filmes',
+      description: 'Uso de API para busca de todos os filmes',
+      image: projectMoviesLib,
+      github: 'https://github.com/JoseLuiz095/movies_lib',
+      link: 'https://movies-lib-ebon.vercel.app/',
     },
     {
-      title: 'Cronômetro',
-      description: 'Cronômetro Web',
-      image: 'image/relogio.webp',
-      github: 'https://github.com/JoseLuiz095/ProjetoCronometro',
-      link: 'https://joseluiz095.github.io/projeto-cronometro/',
+      title: 'Orça Facil',
+      description: 'Uma forma de planejar seus projetos',
+      image: projectOrcaFacil,
+      github: 'https://github.com/JoseLuiz095/orcaFacil',
+      link: 'https://orca-facil-one.vercel.app/',
     },
     {
       title: 'Lista de Tarefas',
-      description: 'Tarefas Web',
-      image: 'image/tarefa.webp',
+      description: 'Lista de Tarefas do dia a dia',
+      image: projectTarefas,
       github: 'https://github.com/JoseLuiz095/ProjetoTarefas',
       link: 'https://joseluiz095.github.io/projeto-tarefas/',
     },
     {
-      title: 'Calculadora Simples',
-      description: 'Calculadora Web',
-      image: 'image/calculadora.webp',
-      github: 'https://github.com/JoseLuiz095/ProjetoCalculadora',
-      link: 'https://joseluiz095.github.io/projeto-calculadora/',
+      title: 'Quiz de perguntas?',
+      description: 'Quiz de perguntas de programação',
+      image: projectQuiz,
+      github: 'https://github.com/JoseLuiz095/quiz',
+      link: 'https://quiz-pink-psi.vercel.app/',
     },
   ];
 
@@ -111,16 +111,16 @@ const ProjectsContainer = () => {
         {projects.map((project, index) => (
           <div className="card" key={index}>
             <div className="box">
-              <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={project.title}>
+              <a className='portfolio-img' href={project.link} target="_blank" rel="noopener noreferrer" aria-label={project.title}>
                 <img src={project.image} alt={project.title} className="img-cards" />
               </a>
               <div className="text">{project.title}</div>
               <p>{project.description}</p>
               <div className="links">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a className='icon' href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <FaGithub size={24} />
                 </a>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label="Live site">
+                <a className='icon' href={project.link} target="_blank" rel="noopener noreferrer" aria-label="Live site">
                   <IoEyeSharp size={24} />
                 </a>
               </div>
