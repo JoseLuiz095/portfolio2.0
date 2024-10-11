@@ -1,36 +1,93 @@
-@use "../variables"
-@use "../mixins"
+@use "../variables" 
+@use "../mixins"    
 
-.tecnologies-container
-    margin-bottom: 1rem
-    transition: opacity 0.4s ease, visibility 0.4s ease !important
+.tecnologies-container 
+  margin-bottom: 1rem
 
-    .tecnologies-grid
-        display: flex
-        flex-wrap: wrap
-        gap: 1.5rem
+  h2 
+    font-size: 2rem
+    text-align: center
+    margin-bottom: 2rem
+    color: variables.$bg-color
+  
 
-        .tecnology-card
-            @include mixins.center
-            gap: 1rem
-            padding: 1rem
-            border: 1px solid #333
-            width: 45%
-            border-radius: variables.$card-border-radius
-            position: relative 
+  .tecnologies-grid 
+    display: flex
+    flex-wrap: wrap
+    gap: 1.5rem
+    justify-content: center // Para centralizar os cards
 
-            h3
-                color: variables.$text-color
-                margin-bottom: 1rem
-            
-            svg
-                font-size: 4rem
+    .tecnology-card 
+      background-color: variables.$bg-color-secondary
+      padding: 1.5rem
+      border-radius: variables.$card-border-radius
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+      width: 45%
+      max-width: 300px
+      text-align: center
+      position: relative
+      transition: transform 0.3s ease
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-between // Garantir que o ícone e texto fiquem adequados
 
-            p
-                display: none
+      &:hover 
+        transform: scale(1.05)
+      
 
-        :hover
-            p   
-                display: flex !important
+      svg 
+        font-size: 5rem // Aumentando o tamanho do ícone
+        margin-bottom: 1rem
+        transition: font-size 0.3s ease // Garantindo que o ícone não mude ao hover
+      
 
+      h3 
+        color: variables.$text-color
+        font-size: 1.5rem
+        margin-bottom: 1rem
+      
+
+      .saiba-mais-btn 
+        margin-top: 0.5rem
+        padding: 0.5rem 1rem
+        background-color: #0000
+        border: none
+        border-radius: variables.$container-border-radius
+        color: #000000
+        cursor: pointer
+        transition: all 0.3s ease
+        font-size: 1rem
+
+        &:hover 
+          background-color: #000000
+        
+      
+
+      .info-text 
+        display: none // Inicialmente o texto está oculto
+        font-size: 0.9rem
+        margin-top: 1rem
+        text-align: justify
+        line-height: 1.4
+        color: variables.$text-color
+
+        // Aparecer suavemente no hover
+        &:hover 
+          display: block
+        
+      
+
+      &:hover 
+        .saiba-mais-btn 
+          display: none // Escondendo o botão "Saiba Mais" ao hover
+        
+
+        .info-text 
+          display: block // Mostrando o texto da tecnologia
+          transition: all 0.3s ease
+        
+      
+    
+  
 
