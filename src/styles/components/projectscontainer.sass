@@ -15,7 +15,7 @@
 
     &:hover
         scale: 1.2
-        border:2px solid #007bff 
+        border:2px solid black
 
 .slick-slide
   padding: 10px
@@ -28,22 +28,33 @@
 .card
   min-height: 300px 
   text-align: center
-  background-color: #e2e2e2
-  border-radius: 10px
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1)
+  background-color: variables.$bg-color-secondary
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+  border-radius: variables.$card-border-radius
   position: relative // Certifique-se de que o card tenha position relative
+  transition: .3s
+
+  &:hover 
+        transform: scale(1.05)
+            
 .box
     padding: 20px
     display: flex
     flex-direction: column
     justify-content: space-between // Para separar o conteúdo dos ícones
+    
     .portfolio-img
         display: flex
         align-content: center
-    .text
+    .title
+        color: variables.$text-color
         font-weight: bold
-        margin-top: 10px
+        margin: .4rem 0
         font-size: 1.2rem
+
+    .text
+        color: variables.$text-color-sencondary
+
     .links
         position: absolute
         bottom: 20px // Define a posição dos ícones no final do card
@@ -57,7 +68,7 @@
         transition: color 0.8s
 
         :hover
-            color: #007bff 
+            color: variables.$text-color
 
 
 

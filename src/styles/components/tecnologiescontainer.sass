@@ -1,5 +1,5 @@
-@use "../variables" 
-@use "../mixins"    
+@use "../variables"
+@use "../mixins"
 
 .tecnologies-container 
   margin-bottom: 1rem
@@ -10,84 +10,79 @@
     margin-bottom: 2rem
     color: variables.$bg-color
   
-
   .tecnologies-grid 
     display: flex
     flex-wrap: wrap
     gap: 1.5rem
-    justify-content: center // Para centralizar os cards
+    justify-content: center 
 
     .tecnology-card 
-      background-color: variables.$bg-color-secondary
-      padding: 1.5rem
-      border-radius: variables.$card-border-radius
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
-      width: 45%
-      max-width: 300px
-      text-align: center
-      position: relative
-      transition: transform 0.3s ease
-      display: flex
-      flex-direction: column
-      align-items: center
-      justify-content: space-between // Garantir que o ícone e texto fiquem adequados
-
-      &:hover 
-        transform: scale(1.05)
-      
-
-      svg 
-        font-size: 5rem // Aumentando o tamanho do ícone
-        margin-bottom: 1rem
-        transition: font-size 0.3s ease // Garantindo que o ícone não mude ao hover
-      
-
-      h3 
-        color: variables.$text-color
-        font-size: 1.5rem
-        margin-bottom: 1rem
-      
-
-      .saiba-mais-btn 
-        margin-top: 0.5rem
-        padding: 0.5rem 1rem
-        background-color: #0000
-        border: none
-        border-radius: variables.$container-border-radius
-        color: #000000
-        cursor: pointer
-        transition: all 0.3s ease
-        font-size: 1rem
+        background-color: variables.$bg-color-secondary
+        padding: 1.5rem
+        border-radius: variables.$card-border-radius
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+        min-width: 45%
+        max-width: 300px
+        text-align: center
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        transition: transform 0.3s ease
 
         &:hover 
-          background-color: #000000
+            transform: scale(1.05)
         
-      
+        svg 
+            font-size: 5rem 
+            margin-bottom: 1rem
+            
+        h3 
+            color: variables.$text-color
+            font-size: 1.5rem
+            margin-bottom: 1rem
+            justify-content: center !important
 
-      .info-text 
-        display: none // Inicialmente o texto está oculto
-        font-size: 0.9rem
-        margin-top: 1rem
-        text-align: justify
-        line-height: 1.4
-        color: variables.$text-color
+        .saiba-mais-btn,
+        .minimize-btn 
+            margin-top: 0.5rem
+            padding: 0.5rem 1rem
+            background-color: transparent
+            border: none
+            border-radius: variables.$container-border-radius
+            color: #000000
+            cursor: pointer
+            transition: all 0.3s ease
+            font-size: 1rem
 
-        // Aparecer suavemente no hover
-        &:hover 
-          display: block
-        
-      
+            &:hover 
+                background-color: #000000
+                color: #ffffff
 
-      &:hover 
-        .saiba-mais-btn 
-          display: none // Escondendo o botão "Saiba Mais" ao hover
-        
+        // Estilo para o botão de minimizar
+        .minimize-btn
+            color: white  
+            background-color: #000000
+            position: absolute
+            bottom: 1rem // Para alinhar o botão ao topo do card
+            right: 1rem // Para posicionar à direita do card
 
+
+        // Texto oculto inicialmente
         .info-text 
-          display: block // Mostrando o texto da tecnologia
-          transition: all 0.3s ease
-        
-      
-    
-  
+            font-size: 0.9rem
+            margin-top: 1rem
+            margin-bottom: 2rem !important
+            text-align: justify
+            line-height: 1.4
+            color: variables.$text-color
+            display: none
 
+        // Transição suave para mostrar o texto
+        &.expanded .info-text,
+        &.expanded .minimize-btn 
+            display: block
+            opacity: 1
+            height: auto
+            transition: all 0.5s ease

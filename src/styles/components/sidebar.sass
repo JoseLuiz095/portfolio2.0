@@ -36,6 +36,12 @@
 
     .btn 
         @include mixins.btn
+        color: #000
+        font-weight: bold
+        transition: .3s
+        
+        &:hover 
+            transform: scale(1.05)
   
     @media (min-width: 1100px) 
         .conteudo
@@ -59,15 +65,14 @@
             width: 100vw
             height: 100vh
             padding: auto 0
-            right: 1%
+            right: 0
             top: 0
             z-index: 1000
             &.open 
                 transform: translateX(0)
                 transition: transform 0.8s ease
         
-
-
+        
 
 // Ícone de hambúrguer
 .hamburger 
